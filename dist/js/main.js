@@ -52,6 +52,14 @@ $(document).ready(function() {
         $('#main-logo').toggleClass('active')
     });
 
+    $("#hamburger").on("click", function() {
+        $('#hb-first').toggleClass('active');
+        $('#hb-second').toggleClass('active');
+        $('#hb-third').toggleClass('active');
+        $('#hamburger-cont').toggleClass('active');
+        $('#side-nav').toggleClass('active');
+    });
+
     // top-nav actions
     $("#about").on("click", function() {
         $("#about").addClass("active");
@@ -114,6 +122,8 @@ $(document).ready(function() {
             .getElementById("contact-title")
             .scrollIntoView({ block: "start" });
     });
+
+
 
     $(window).on("scroll", function() {
         if (
