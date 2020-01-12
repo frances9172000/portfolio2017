@@ -138,6 +138,85 @@ $(document).ready(function() {
         }
     });
 
+       // side-nav mobile actions
+       $("#about-mb").on("click", function() {
+        $("#about-mb").addClass("active");
+        $("#projects-mb").removeClass("active");
+        $("#contacts-mb").removeClass("active");
+        document
+            .getElementById("about-title")
+            .scrollIntoView({ block: "start" });
+    });
+
+    $(window).on("scroll", function(e) {
+        if (
+            document.getElementById("about-page").getBoundingClientRect()
+                .bottom >= 30 &&
+            document.getElementById("about-page").getBoundingClientRect()
+                .bottom <= innerHeight
+        ) {
+            $("#about-mb").addClass("active");
+            $("#projects-mb").removeClass("active");
+            $("#contacts-mb").removeClass("active");
+        }
+    });
+
+    $("#projects-mb").on("click", function() {
+        $("#about-mb").removeClass("active");
+        $("#projects-mb").addClass("active");
+        $("#contacts-mb").removeClass("active");
+        document
+            .getElementById("myworks-title")
+            .scrollIntoView({ block: "start" });
+    });
+
+    $(window).on("scroll", function() {
+        if (
+            document.getElementById("myworks-title").getBoundingClientRect()
+                .top >= -10 &&
+            document.getElementById("myworks-title").getBoundingClientRect()
+                .bottom <= innerHeight
+        ) {
+            $("#about-mb").removeClass("active");
+            $("#projects-mb").addClass("active");
+            $("#contacts-mb").removeClass("active");
+        } else if (
+            document.getElementById("myworks").getBoundingClientRect()
+                .bottom >= innerHeight - 200 &&
+            document.getElementById("myworks").getBoundingClientRect()
+                .bottom <= innerHeight
+        ) {
+            $("#about-mb").removeClass("active");
+            $("#projects-mb").addClass("active");
+            $("#contacts-mb").removeClass("active");
+        }
+    });
+
+    $("#contacts-mb").on("click", function() {
+        $("#about-mb").removeClass("active");
+        $("#projects-mb").removeClass("active");
+        $("#contacts-mb").addClass("active");
+        document
+            .getElementById("contact-title")
+            .scrollIntoView({ block: "start" });
+    });
+
+
+
+    $(window).on("scroll", function() {
+        if (
+            document.getElementById("contact-title").getBoundingClientRect()
+                .top >= -10 &&
+            document.getElementById("contact-title").getBoundingClientRect()
+                .top <= 100
+        ) {
+            $("#about-mb").removeClass("active");
+            $("#projects-mb").removeClass("active");
+            $("#contacts-mb").addClass("active");
+        }
+    });
+
+
     // Viewport checker
     class viewPortChecker {
         constructor(element, totalWidth, percent) {
