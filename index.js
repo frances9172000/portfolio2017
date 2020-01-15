@@ -6,7 +6,6 @@ const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
-require('dotenv').config()
 
 // express ejs
 app.use(expressLayouts);
@@ -92,8 +91,8 @@ app.post("/send", (req, res) => {
             ciphers:'SSLv3'
             },
             auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASSWORD
+                user: 'francesg@outlook.ph',
+                pass: 'gonzales152000'
             }
         });
 
