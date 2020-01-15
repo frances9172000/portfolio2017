@@ -237,9 +237,9 @@ $(document).ready(function() {
             }
         }
 
-        // if element is in viewport, animate progresse bar
+        // if element is in viewport, animate progress bar
         animte() {
-            $(window).on("resize scroll", e => {
+            $(window).on("scroll", e => {
                 if (this.isInViewPort(this.element)) {
                     this.element.style.width = `${(this.percent / 100) *
                         totalWidth}px`;
@@ -252,7 +252,7 @@ $(document).ready(function() {
         }
 
         fade() {
-            $(window).on("resize scroll", e => {
+            $(window).on("scroll", e => {
                 if (this.isInViewPort(this.element)) {
                     this.element.style.top = 0;
                     this.element.style.opacity = 1;
